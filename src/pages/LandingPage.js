@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function LandingPage() {
   return (
@@ -12,6 +13,8 @@ function LandingPage() {
 
         <p>Search for your location below</p>
         <button>Search</button>
+
+        <Link to="/weather">Weather page</Link>
     </div>
   )
 }

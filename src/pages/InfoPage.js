@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function InfoPage() {
   return (
-    <div>InfoPage</div>
+    <div>
+      <Link to="/">Homepage</Link>
+    </div>
   )
 }
 
