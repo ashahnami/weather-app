@@ -5,7 +5,7 @@ function LandingPage() {
   return (
     <div>
         <h1>
-            Farming Weather
+            Farming Weathers app sdifhsidfh git 
         </h1>
         <h2>
             Weather forecasts and information
