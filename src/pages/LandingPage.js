@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from '../components/SearchBar';
 
 function LandingPage() {
   return (
@@ -12,6 +13,7 @@ function LandingPage() {
         </h2>
 
         <p>Search for your location below</p>
+        <SearchBar />
         <button>Search</button>
 
         <Link to="/weather">Weather page</Link>
