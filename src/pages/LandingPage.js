@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 
 function LandingPage() {
+  useEffect(() => {
+    document.title = 'Home';
+  })
+
   return (
     <div>
         <h1>
