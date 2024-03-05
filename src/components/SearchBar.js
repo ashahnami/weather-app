@@ -8,15 +8,25 @@ function SearchBar() {
         setInput(e.target.value);
     }
 
+    function handleSubmit(e) {
+        e.preventDefault();
+        alert(input);
+    }
+
     return (
-        <div>
+        <form onSubmit={handleSubmit}>
             <input 
                 type="text"
                 placeholder="Search for a place"
                 value={input}
                 onChange={handleChange}
             />
-        </div>
+
+            <input
+                type="submit"
+                value="Search"
+            />
+        </form>
     )
 }
 

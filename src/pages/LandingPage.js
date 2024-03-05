@@ -14,7 +14,6 @@ function LandingPage() {
 
         <p>Search for your location below</p>
         <SearchBar />
-        <button>Search</button>
 
         <Link to="/weather">Weather page</Link>
     </div>
