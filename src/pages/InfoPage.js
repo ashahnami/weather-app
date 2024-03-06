@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './InfoPage.css';
 
 
 
 function InfoPage() {
+  let location = useLocation();
+
   useEffect(() => {
     document.title = 'Weather';
+    console.log(location.state);
   })
 
   return (
@@ -33,6 +36,7 @@ function InfoPage() {
         </div>
       </div>
 
+      <p>Searched for: {location.state.place}</p>
     </div>
 
   )
