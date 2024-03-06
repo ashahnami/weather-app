@@ -1,0 +1,12 @@
+.flexbox-container{
+    display:flex;
+}
+
+.flexbox-item{
+    width : 100%;
+    border : 3px solid black;
+    background-color:aliceblue;
+    margin: 10px;
+    border-radius: 10px; 
+    min-height:100px;
+}
