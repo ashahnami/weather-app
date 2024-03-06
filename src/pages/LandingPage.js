@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
-import './InfoPage.css';
+import './LandingPage.css';
 
 function LandingPage() {
   useEffect(() => {
@@ -10,7 +10,10 @@ function LandingPage() {
   })
 
   return (
-    <div className = "info-page">
+    <div>
+        <p>Search for your location below</p>
+        <SearchBar />
+
         <h1>
             Farming Weathers app sdifhsidfh git 
         </h1>
@@ -18,8 +21,7 @@ function LandingPage() {
             Weather forecasts and information
         </h2>
 
-        <p>Search for your location below</p>
-        <SearchBar />
+        
 
         <Link to="/weather">Weather page</Link>
     </div>
