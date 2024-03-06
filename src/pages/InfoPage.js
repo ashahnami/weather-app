@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './InfoPage.css';
-
-
 
 function InfoPage() {
   let location = useLocation();
@@ -17,8 +15,7 @@ function InfoPage() {
     <div>
 
       <Link to="/">Homepage</Link>
-      <SearchBar />
-
+      <p>Searched for: {location.state.place}</p>
 
       <div class = "flexbox-container">
 
