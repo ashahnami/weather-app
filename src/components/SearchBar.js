@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SearchBar() {
     const [input, setInput] = useState("");
+    let navigate = useNavigate();
 
     function handleChange(e) {
         e.preventDefault();
@@ -10,7 +12,7 @@ function SearchBar() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        alert(input);
+        navigate('/weather', { state: { place: input } });
     }
 
     return (
