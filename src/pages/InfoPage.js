@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import '../assets/info.css';
+import KeyDetails from '../components/KeyDetails';
 
 function InfoPage() {
   let location = useLocation();
+  let place = location.state.place;
 
   useEffect(() => {
     document.title = 'Weather';
@@ -15,11 +17,11 @@ function InfoPage() {
     <div>
 
       <Link to="/">Homepage</Link>
-      <p>Searched for: {location.state.place}</p>
 
       <div class = "flexbox-container">
 
         <div class = "flexbox-item">
+          <KeyDetails place={place} />
         </div>
 
         <div class = "flexbox-item">
