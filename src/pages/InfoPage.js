@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import '../assets/info.css';
+import NavBar from '../components/NavBar';
 import KeyDetails from '../components/KeyDetails';
 
 function InfoPage() {
@@ -16,7 +17,7 @@ function InfoPage() {
   return (
     <div>
 
-      <Link to="/">Homepage</Link>
+      <NavBar />
 
       <div class = "flexbox-container">
 

@@ -1,0 +1,16 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 5px;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 18px;
+    color: #a9a9a9;
+}
+
+.link:hover {
+    color: black;
+}
