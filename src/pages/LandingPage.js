@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
-import './LandingPage.css';
+import '../assets/landing.css';
 
 function LandingPage() {
   useEffect(() => {
