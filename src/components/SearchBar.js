@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import '../assets/searchbar.css';
+
 function SearchBar() {
     const [input, setInput] = useState("");
     let navigate = useNavigate();
@@ -16,17 +18,19 @@ function SearchBar() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='search'>
             <input 
                 type="text"
                 placeholder="Search for a place"
                 value={input}
                 onChange={handleChange}
+                className='input'
             />
 
             <input
                 type="submit"
                 value="Search"
+                className='button'
             />
         </form>
     )
