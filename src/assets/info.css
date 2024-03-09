@@ -41,3 +41,12 @@
 
 .flexbox-item-3{
 }
+
+.info .row1 {
+    height: 240px;
+}
+
+.info .row1 .flexbox-item:first-child {
+    border: none;
+    background-color: #ffffff;
+}

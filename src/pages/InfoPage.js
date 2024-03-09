@@ -21,15 +21,12 @@ function InfoPage() {
       <NavBar />
 
       <div className='info-container'>
-        <div class = "flexbox-container">
-
-          <div class = "flexbox-item">
+        <div className = "flexbox-container row1">
+          <div className = "flexbox-item">
             <KeyDetails place={place} />
           </div>
 
-          <div class = "flexbox-item">
-          </div>
-
+          <div class = "flexbox-item"></div>
         </div>
 
         <div class = "flexbox-container">
