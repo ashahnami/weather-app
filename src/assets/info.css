@@ -2,7 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 50px;
+    margin-top: 50px;
     width: 100%;
+}
+
+.info-container {
+    width: 1280px;
 }
 
 .flexbox-container{

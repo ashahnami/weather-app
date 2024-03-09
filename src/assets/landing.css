@@ -1,0 +1,9 @@
+.landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-container {
+    width: 1280px;
+}

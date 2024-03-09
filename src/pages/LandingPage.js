@@ -10,7 +10,8 @@ function LandingPage() {
   })
 
   return (
-    <div>
+    <div className='landing'>
+      <div className='landing-container'>
         <h1>
             Farming Weathers app sdifhsidfh git 
         </h1>
@@ -23,6 +24,7 @@ function LandingPage() {
         
 
         <Link to="/weather">Weather page</Link>
+      </div>
     </div>
   )
 }

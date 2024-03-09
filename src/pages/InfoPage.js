@@ -20,78 +20,79 @@ function InfoPage() {
 
       <NavBar />
 
-      <div class = "flexbox-container">
+      <div className='info-container'>
+        <div class = "flexbox-container">
 
-        <div class = "flexbox-item">
-          <KeyDetails place={place} />
-        </div>
-
-        <div class = "flexbox-item">
-        </div>
-
-      </div>
-
-      <div class = "flexbox-container">
-        
-        <div class = "flexbox-item">
-          <Hourly />
-        </div>
-      </div>
-
-      <div class = "flexbox-container">
-        
-
-          <div class = "flexbox-item-bottom-row">
-
-          <div class = "flexbox-container">
-              <div class = "flexbox-item">
-              </div> 
-
-            </div>
-
-            <div class = "flexbox-container">
-
-
-              <div class = "flexbox-item">
-              </div>
-              <div class = "flexbox-item">
-              </div>
-
-            </div>
-
-            
+          <div class = "flexbox-item">
+            <KeyDetails place={place} />
           </div>
 
-          <div class = "flexbox-item-bottom-row">
-
-            <div class = "flexbox-container">
-              <div class = "flexbox-item">
-              </div> 
-
-            </div>
-            
+          <div class = "flexbox-item">
           </div>
 
-          <div class = "flexbox-item-bottom-row">
+        </div>
 
-          <div class = "flexbox-container">
+        <div class = "flexbox-container">
+          
+          <div class = "flexbox-item">
+            <Hourly />
+          </div>
+        </div>
 
+        <div class = "flexbox-container">
+          
+
+            <div class = "flexbox-item-bottom-row">
+
+            <div class = "flexbox-container">
                 <div class = "flexbox-item">
                 </div> 
-          </div>
-          
-          <div class = "flexbox-container">
-          <div class = "flexbox-item">
+
+              </div>
+
+              <div class = "flexbox-container">
+
+
+                <div class = "flexbox-item">
+                </div>
+                <div class = "flexbox-item">
+                </div>
+
+              </div>
+
+              
+            </div>
+
+            <div class = "flexbox-item-bottom-row">
+
+              <div class = "flexbox-container">
+                <div class = "flexbox-item">
                 </div> 
 
-          </div>
-                
+              </div>
+              
+            </div>
+
+            <div class = "flexbox-item-bottom-row">
+
+            <div class = "flexbox-container">
+
+                  <div class = "flexbox-item">
+                  </div> 
+            </div>
+            
+            <div class = "flexbox-container">
+            <div class = "flexbox-item">
+                  </div> 
+
+            </div>
+                  
 
 
-          </div>
+            </div>
 
+        </div>
       </div>
-
     </div>
 
   )
