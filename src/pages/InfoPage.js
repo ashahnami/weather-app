@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import '../assets/info.css';
 import NavBar from '../components/NavBar';
 import KeyDetails from '../components/KeyDetails';
+import Hourly from '../components/Hourly';
 
 function InfoPage() {
   let location = useLocation();
@@ -15,7 +16,7 @@ function InfoPage() {
   })
 
   return (
-    <div>
+    <div className='info'>
 
       <NavBar />
 
@@ -33,6 +34,7 @@ function InfoPage() {
       <div class = "flexbox-container">
         
         <div class = "flexbox-item">
+          <Hourly />
         </div>
       </div>
 
