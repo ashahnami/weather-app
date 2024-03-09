@@ -14,7 +14,9 @@ function SearchBar() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        navigate('/weather', { state: { place: input } });
+        if (input.length > 0){
+            navigate('/weather', { state: { place: input } });
+        }
     }
 
     return (
