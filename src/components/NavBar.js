@@ -8,9 +8,11 @@ import '../assets/navbar.css';
 function Home() {
   return (
     <div className='navbar'>
-        <Link to="/" className='link'>Home</Link>
+      <div className='navbar-container'>
+          <Link to="/" className='link'>Home</Link>
 
-        <SearchBar />
+          <SearchBar />
+      </div>
     </div>
   )
 }

@@ -1,8 +1,17 @@
 .navbar {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 15px;
     padding: 5px;
+    width: 1280px;
 }
 
 .link {
