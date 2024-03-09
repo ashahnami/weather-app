@@ -1,8 +1,9 @@
 .hourly {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 12px;
 }
@@ -10,5 +11,28 @@
 .hourly div {
     height: 100%;
     width: 100%;
-    background-color: grey;  /* just for development */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hourly div .time {
+    font-size: 1.2rem;
+}
+
+.hourly div .temperature {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 1.6rem;
+}
+
+.hourly div .temperature span {
+    font-size: 1rem;
+}
+
+.hourly div .rainfall {
+    color: rgb(22, 174, 255);
 }

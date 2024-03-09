@@ -50,3 +50,11 @@
     border: none;
     background-color: #ffffff;
 }
+
+.info .row2 {
+    height: 180px;
+}
+
+.info .row2 .flexbox-item {
+    background-color: #ffffff;
+}

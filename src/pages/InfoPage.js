@@ -29,8 +29,7 @@ function InfoPage() {
           <div class = "flexbox-item"></div>
         </div>
 
-        <div class = "flexbox-container">
-          
+        <div className="flexbox-container row2">
           <div class = "flexbox-item">
             <Hourly />
           </div>
