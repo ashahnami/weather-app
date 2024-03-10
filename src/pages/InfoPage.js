@@ -9,7 +9,7 @@ import Daily from '../components/Daily';
 
 function InfoPage() {
   let location=useLocation();
-  let place=location.state.place;
+  //let place=location.state.place;
 
   useEffect(() => {
     document.title='Weather';
@@ -24,7 +24,7 @@ function InfoPage() {
       <div className='info-container'>
         <div className="flexbox-container row1">
           <div className="flexbox-item">
-            <KeyDetails place={place} />
+             {/* <KeyDetails place={place} /> */}
           </div>
 
           <div class="flexbox-item"></div>
