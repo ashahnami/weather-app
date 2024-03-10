@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import '../assets/landing.css';
 
@@ -21,9 +20,6 @@ function LandingPage() {
 
         <p>Search for your location below</p>
         <SearchBar />
-        
-
-        <Link to="/weather">Weather page</Link>
       </div>
     </div>
   )
