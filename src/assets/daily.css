@@ -1,0 +1,20 @@
+.daily {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    padding: 10px;
+    font-size: 1.4rem;
+}
+
+.daily .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.daily .row div {
+    flex-grow: 1;
+    width: 33%;
+}

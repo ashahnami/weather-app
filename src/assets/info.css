@@ -58,3 +58,11 @@
 .info .row2 .flexbox-item {
     background-color: #ffffff;
 }
+
+.info .middle {
+    height: 100%;
+}
+
+.info .middle .flexbox-item {
+    background-color: #ffffff;
+}
