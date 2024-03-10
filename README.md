@@ -14,6 +14,14 @@ Install the dependencies by running the following command:
 $ npm install
 ```
 
+### Usage
+
+Create a .env file and enter the following secret keys:
+
+```env
+REACT_APP_API_KEY=YOUR_OPENWEATHER_API_KEY
+```
+
 ### Running
 
 Run the React app by running the following command:
