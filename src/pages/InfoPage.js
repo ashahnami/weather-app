@@ -26,28 +26,28 @@ function InfoPage() {
              <KeyDetails place={place} />
           </div>
 
-          <div class="flexbox-item"></div>
+          <div className="flexbox-item"></div>
         </div>
 
         <div className="flexbox-container row2">
-          <div class="flexbox-item">
+          <div className="flexbox-item">
             <Hourly />
           </div>
         </div>
 
-        <div class="flexbox-container">
-            <div class="flexbox-item-bottom-row">
-              <div class="flexbox-container">
-                  <div class="flexbox-item"></div> 
+        <div className="flexbox-container">
+            <div className="flexbox-item-bottom-row">
+              <div className="flexbox-container">
+                  <div className="flexbox-item"></div> 
               </div>
 
-              <div class="flexbox-container">
-                <div class="flexbox-item"></div>
-                <div class="flexbox-item"></div>
+              <div className="flexbox-container">
+                <div className="flexbox-item"></div>
+                <div className="flexbox-item"></div>
               </div>
             </div>
 
-            <div class="flexbox-item-bottom-row">
+            <div className="flexbox-item-bottom-row">
               <div className="flexbox-container middle">
                 <div className="flexbox-item">
                   <Daily />
@@ -55,13 +55,13 @@ function InfoPage() {
               </div>
             </div>
 
-            <div class="flexbox-item-bottom-row">
-              <div class="flexbox-container">
-                <div class="flexbox-item"></div> 
+            <div className="flexbox-item-bottom-row">
+              <div className="flexbox-container">
+                <div className="flexbox-item"></div> 
               </div>
             
-              <div class="flexbox-container">
-              <div class="flexbox-item"></div> 
+              <div className="flexbox-container">
+              <div className="flexbox-item"></div> 
             </div>
 
           </div>

@@ -12,13 +12,9 @@ function LandingPage() {
     <div className='landing'>
       <div className='landing-container'>
         <h1>
-            Farming Weathers app sdifhsidfh git 
+            A weather application for farmers
         </h1>
-        <h2>
-            Weather forecasts and information
-        </h2>
 
-        <p>Search for your location below</p>
         <SearchBar />
       </div>
     </div>
