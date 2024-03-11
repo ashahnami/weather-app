@@ -6,6 +6,7 @@ import NavBar from '../components/NavBar';
 import KeyDetails from '../components/KeyDetails';
 import Hourly from '../components/Hourly';
 import Daily from '../components/Daily';
+import Map from '../components/Map';
 
 function InfoPage() {
   let location=useLocation();
@@ -26,7 +27,9 @@ function InfoPage() {
              <KeyDetails place={place} />
           </div>
 
-          <div className="flexbox-item"></div>
+          <div className="flexbox-item">
+            <Map />
+          </div>
         </div>
 
         <div className="flexbox-container row2">
