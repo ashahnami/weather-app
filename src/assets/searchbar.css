@@ -1,4 +1,4 @@
-.search {
+.search .input-container {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -6,7 +6,7 @@
     height: 40px;
 }
 
-.search .input {
+.search .input-container .input {
     box-sizing: border-box;
     width: 400px;
     height: 100%;
@@ -16,11 +16,11 @@
     padding: 8px;
 }
 
-.search .input:hover {
+.search .input-container .input:hover {
     outline: none;
 }
 
-.search .button {
+.search .input-container .button {
     height: 100%;
     font-size: 1.2rem;
     border-radius: 0;
@@ -28,6 +28,23 @@
     padding: 0 10px;
 }
 
-.search .button:hover {
+.search .input-container .button:hover {
+    cursor: pointer;
+}
+
+.search .results {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 400px;
+}
+
+.search .results .result {
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+.search .results .result:hover {
+    background-color: #f0f0f0;
     cursor: pointer;
 }
