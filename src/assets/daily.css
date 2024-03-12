@@ -11,10 +11,23 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     text-align: center;
 }
 
 .daily .row div {
     flex-grow: 1;
     width: 33%;
+}
+
+.daily .row img {
+    height: 50px;
+}
+
+.daily .row .temperature div {
+    display: inline;
+}
+
+.daily .row .temperature div:last-child {
+    font-weight: 600;
 }
