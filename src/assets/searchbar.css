@@ -37,11 +37,17 @@
     flex-direction: column;
     position: absolute;
     width: 400px;
+    border: solid 1px #a9a9a9;
+}
+
+.search .results:empty {
+    border: none;
 }
 
 .search .results .result {
     padding: 5px;
     font-size: 1.2rem;
+    background-color: #ffffff;
 }
 
 .search .results .result:hover {

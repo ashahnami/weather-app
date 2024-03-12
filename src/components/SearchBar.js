@@ -69,6 +69,7 @@ function SearchBar() {
                   className="result"
                   key={index}
                   onClick={(e) => {
+                    setShowResults(false);
                     navigate("/weather", { state: { place: result.name, lat: result.lat, lon: result.lon }});
                   }}
                 >
