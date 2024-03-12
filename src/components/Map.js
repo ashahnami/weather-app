@@ -4,10 +4,10 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import '../assets/map.css';
 import 'leaflet/dist/leaflet.css';
 
-function Map() {
+function Map({ lat, lon }) {
   return (
     <MapContainer 
-      center={[51.5072, 0.1276]} 
+      center={[lat, lon]} 
       zoom={13} 
       scrollWheelZoom={false} 
       className='map'

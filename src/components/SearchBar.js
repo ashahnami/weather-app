@@ -69,7 +69,7 @@ function SearchBar() {
                   className="result"
                   key={index}
                   onClick={(e) => {
-                    navigate("/weather", { state: { place: result.name } });
+                    navigate("/weather", { state: { place: result.name, lat: result.lat, lon: result.lon }});
                   }}
                 >
                   {result.name}, {result.state}

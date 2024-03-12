@@ -10,9 +10,11 @@ import Map from '../components/Map';
 
 function InfoPage() {
   let location=useLocation();
-  let place=location.state ? location.state.place: "temporary";
+  let place=location.state ? location.state.place: "London";
+  let lat=location.state ? location.state.lat: 51.5072;
+  let lon=location.state ? location.state.lon: 0.1276;
 
-  useEffect(() => {
+  useEffect(() => { 
     document.title='Weather';
   })
 
@@ -24,11 +26,11 @@ function InfoPage() {
       <div className='info-container'>
         <div className="flexbox-container row1">
           <div className="flexbox-item">
-             <KeyDetails place={place} />
+             <KeyDetails place={place} lat={lat} lon={lon} />
           </div>
 
           <div className="flexbox-item">
-            <Map />
+            <Map lat={lat} lon={lon} />
           </div>
         </div>
 
@@ -53,7 +55,7 @@ function InfoPage() {
             <div className="flexbox-item-bottom-row">
               <div className="flexbox-container middle">
                 <div className="flexbox-item">
-                  <Daily />
+                  <Daily lat={lat} lon={lon} />
                 </div> 
               </div>
             </div>

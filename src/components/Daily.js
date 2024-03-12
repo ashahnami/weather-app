@@ -3,13 +3,8 @@ import axios from 'axios';
 
 import '../assets/daily.css';
 
-function Daily() {
+function Daily({ lat, lon }) {
     const [forecast, setForecast] = useState([]);
-
-    /* just test coordinates for London */
-    let lat=51.5072;
-    let lon=0.1276;
-    /* number of days forecast to receive */
     let cnt=8;
     
     useEffect(() => {
