@@ -13,9 +13,10 @@ function KeyDetails({ place, lat, lon }) {
     setDetails(response.data);
     console.log(response.data);
   };
+  
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   return (
     <div className="keydetails">
