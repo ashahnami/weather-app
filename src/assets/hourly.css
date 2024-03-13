@@ -9,7 +9,7 @@
 }
 
 .hourly div {
-    height: 100%;
+    height: 75%;
     width: 100%;
     display: flex;
     flex-direction: column;
