@@ -4,18 +4,13 @@ import axios from 'axios';
 
 import '../assets/hourly.css';
 
-function Hourly() {
+function Hourly({ lat, lon }) {
 
   const [forecast, setForecast] = useState([]);
 
-  let lat=51.5072;
-  let lon=0.1276;
-  /* number of days forecast to receive */
-  let cnt=8;
-
   useEffect(() => {
     axios
-    .get(`https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}`)
+    .get(`https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
     .then(function (response) {
         setForecast(response.data.list);
         console.log(response.data.list);

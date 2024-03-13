@@ -36,7 +36,7 @@ function InfoPage() {
 
         <div className="flexbox-container row2">
           <div className="flexbox-item">
-            <Hourly />
+            <Hourly lat={lat} lon={lon} />
           </div>
         </div>
 
