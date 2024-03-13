@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import SearchIcon from '@mui/icons-material/Search';
+import ClearIcon from '@mui/icons-material/Clear';
 
 import "../assets/searchbar.css";
 
@@ -8,20 +10,19 @@ function SearchBar() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
+  const { getCode, getName } = require("country-list");
   let navigate = useNavigate();
   let searchRef = useRef();
 
   function handleChange(e) {
-    e.preventDefault();
+    const input_ = e.target.value;
+    setShowResults(true);
     setInput(e.target.value);
-  }
-
-  function handleSubmit(e) {
     e.preventDefault();
-    if (input.length > 0) {
+    if (input_.length > 0) {
       axios
         .get(
-          `http://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=5&appid=${process.env.REACT_APP_API_KEY}`
+          `http://api.openweathermap.org/geo/1.0/direct?q=${input_}&limit=5&appid=${process.env.REACT_APP_API_KEY}`
         )
         .then(function (response) {
           setResults(response.data);
@@ -30,6 +31,11 @@ function SearchBar() {
           console.log(error.response.data.message);
         });
     }
+  }
+
+  function clearInput() {
+    setInput("");
+    setResults([]);
   }
 
   useEffect(() => {
@@ -48,7 +54,7 @@ function SearchBar() {
 
   return (
     <div className="search" ref={searchRef}>
-      <form onSubmit={handleSubmit} className="input-container">
+      <div className="input-container">
         <input
           type="text"
           placeholder="Search for a place"
@@ -58,8 +64,8 @@ function SearchBar() {
           onFocus={() => setShowResults(true)}
         />
 
-        <input type="submit" value="Search" className="button" />
-      </form>
+        {input.length > 0 ? <ClearIcon onClick={clearInput} className="clear-icon" /> : <SearchIcon className="search-icon" />}
+      </div>
 
       <div className="results">
         {showResults
@@ -73,7 +79,7 @@ function SearchBar() {
                     navigate("/weather", { state: { place: result.name, lat: result.lat, lon: result.lon }});
                   }}
                 >
-                  {result.name}, {result.state}
+                  {result.name}, {result.country === "GB" ? "UK" : getName(result.country)}
                 </div>
               );
             })
