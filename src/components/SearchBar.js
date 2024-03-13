@@ -77,6 +77,7 @@ function SearchBar() {
                   onClick={(e) => {
                     setShowResults(false);
                     navigate("/weather", { state: { place: result.name, lat: result.lat, lon: result.lon }});
+                    navigate(0);
                   }}
                 >
                   {result.name}, {result.country === "GB" ? "UK" : getName(result.country)}
