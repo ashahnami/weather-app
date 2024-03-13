@@ -17,9 +17,10 @@
 .link {
     text-decoration: none;
     font-size: 18px;
-    color: #a9a9a9;
+    color: black;
+    transition: 0.2s;
 }
 
 .link:hover {
-    color: black;
+    color: #a8a8a8;
 }

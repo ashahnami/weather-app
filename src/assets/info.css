@@ -48,7 +48,7 @@
 
 .info .row1 .flexbox-item:first-child {
     border: none;
-    background-color: #ffffff;
+    background-color: transparent;
 }
 
 .info .row2 {

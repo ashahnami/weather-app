@@ -5,9 +5,9 @@
     align-items: center;
     width: 400px;
     height: 40px;
-    border: solid 1px #888888;
     border-radius: 8px;
     padding: 2px;
+    background-color: #ffffff;
 }
 
 .search .input-container .input {
@@ -38,8 +38,8 @@
     flex-direction: column;
     position: absolute;
     width: 400px;
-    border: solid 1px #a9a9a9;
-
+    transform: translateY(-0.4rem);
+    border-bottom-left-radius: 8;
 }
 
 .search .results:empty {
@@ -51,9 +51,15 @@
     font-size: 1rem;
     background-color: #ffffff;
     transition: 0.3s;
+
 }
 
 .search .results .result:hover {
     background-color: #f0f0f0;
     cursor: pointer;
+}
+
+.search .results .result:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
