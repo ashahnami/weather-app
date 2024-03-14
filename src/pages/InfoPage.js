@@ -10,6 +10,7 @@ import Map from "../components/Map";
 import Humidity from "../components/Humidity";
 import Wind from "../components/Wind";
 import Rainfall from "../components/Rainfall";
+import UVIndex from "../components/UVIndex";
 
 function InfoPage() {
   let location = useLocation();
@@ -45,7 +46,9 @@ function InfoPage() {
         <div className="flexbox-container">
           <div className="flexbox-item-bottom-row">
             <div className="flexbox-container">
-              <div className="flexbox-item"></div>
+              <div className="flexbox-item">
+                <UVIndex lat={lat} lon={lon} />
+              </div>
             </div>
 
             <div className="flexbox-container">
