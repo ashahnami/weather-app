@@ -7,6 +7,10 @@
 }
 
 .keydetails .location {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
     font-size: 1.8rem;
 }
 
@@ -20,4 +24,8 @@
 
 .keydetails .alt-temperature {
     font-size: 1.2rem;
+}
+
+.keydetails .SrSs {
+    font-size: 1rem;
 }

@@ -22,7 +22,24 @@ function KeyDetails({ place, lat, lon }) {
     <div className="keydetails">
       {details ? (
         <>
-          <div className="location">{place}</div>
+          <div className="location">
+            {place}
+            <span className="SrSs">
+              <p>
+                {" "}
+                Sunrise:{" "}
+                {new Date(details.sys.sunrise * 1000).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}{" "}
+                || Sunset:{" "}
+                {new Date(details.sys.sunset * 1000).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}{" "}
+              </p>
+            </span>
+          </div>
           <div className="temperature">
             {Math.round(details.main.temp)}°<span className="range">±0.5</span>
           </div>
