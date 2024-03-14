@@ -26,13 +26,19 @@ function Rainfall({ lat, lon }) {
               <div className="rainfall">
                 <p>
                   Rainfall:{" "}
-                  {isNaN(precipData.rain) ? "0" : Math.round(precipData.rain)}mm
+                  {isNaN(precipData.rain?.["1h"])
+                    ? "0"
+                    : Math.round(precipData.rain["1h"])}
+                  mm
                 </p>
               </div>
               <div className="snowfall">
                 <p>
                   Snowfall:{" "}
-                  {isNaN(precipData.snow) ? "0" : Math.round(precipData.snow)}mm
+                  {isNaN(precipData.snow?.["1h"])
+                    ? "0"
+                    : Math.round(precipData.snow["1h"])}
+                  mm
                 </p>
               </div>
             </div>
