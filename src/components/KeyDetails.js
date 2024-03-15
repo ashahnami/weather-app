@@ -1,29 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { LocationContext } from "../context";
 
 import "../assets/keydetails.css";
 
-function KeyDetails({ place, lat, lon }) {
+function KeyDetails() {
   const [details, setDetails] = useState(null);
+  const [location, setLocation] = useContext(LocationContext)
 
   const fetchData = async () => {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
     );
     setDetails(response.data);
-    console.log(response.data);
+    console.log(response.data)
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (location) fetchData();
+  }, [location]);
 
   return (
     <div className="keydetails">
       {details ? (
         <>
           <div className="location">
-            {place}
+            {details.name}
             <span className="SrSs">
               <p>
                 {" "}

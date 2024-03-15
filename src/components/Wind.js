@@ -1,20 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { LocationContext } from "../context";
 
 import "../assets/wind.css";
-function Wind({ lat, lon }) {
+
+function Wind() {
+  const [location, setLocation] = useContext(LocationContext);
   const [wind, setWind] = useState(null);
 
-  useEffect(() => {
+  const fetchData = () => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
       )
       .then(function (response) {
         setWind(response.data);
-        console.log(response.data);
       });
-  }, [lat, lon]);
+  }
+
+    useEffect(() => {
+      if (location) fetchData();
+    }, [location])
 
   return (
     <div className="wind">

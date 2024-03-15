@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { LocationContext } from '../context';
 
 import '../assets/hourly.css';
 
-function Hourly({ lat, lon }) {
-
+function Hourly() {
+  const [location, setLocation] = useContext(LocationContext);
   const [forecast, setForecast] = useState([]);
 
-  useEffect(() => {
+  const fetchData = () => {
     axios
-    .get(`https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
+    .get(`https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
     .then(function (response) {
         setForecast(response.data.list);
-        console.log(response.data.list);
     });
+  }
 
-    
-  }, [])
+  useEffect(() => {
+    if (location) fetchData(); 
+  }, [location])
 
     return (
       

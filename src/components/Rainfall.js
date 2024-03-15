@@ -1,20 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { LocationContext } from "../context";
+
 import "../assets/precipitation.css";
 
-function Rainfall({ lat, lon }) {
+function Rainfall() {
+  const [location, setLocation] = useContext(LocationContext);
   const [precip, setPrecip] = useState([]);
 
-  useEffect(() => {
+  const fetchData = () => {
     axios
-      .get(
-        `https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+    .get(
+        `https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
       )
       .then(function (response) {
         setPrecip(response.data.list);
-        console.log(response.data.list);
       });
-  }, []);
+  }
+
+  useEffect(() => {
+    if (location) fetchData();
+  }, [location]);
 
   return (
     <div className="precipitation">

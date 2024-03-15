@@ -1,20 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import { LocationContext } from '../context';
 
 import '../assets/daily.css';
 
-function Daily({ lat, lon }) {
+function Daily() {
+    const [location, setLocation] = useContext(LocationContext);
     const [forecast, setForecast] = useState([]);
     let cnt=8;
-    
+
+    const fetchData = () => {
+            axios
+            .get(`https://api.openweathermap.org/data/2.5/forecast/daily?lat=${location.lat}&lon=${location.lon}&cnt=${cnt}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
+            .then(function (response) {
+                setForecast(response.data.list);
+                console.log(response.data.list);
+            });
+    }
+
     useEffect(() => {
-        axios
-        .get(`https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt=${cnt}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
-        .then(function (response) {
-            setForecast(response.data.list);
-            console.log(response.data.list);
-        });
-    }, [])
+        if (location) fetchData();
+    }, [location])
 
   return (
     <div className='daily'>

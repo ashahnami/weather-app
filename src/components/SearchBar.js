@@ -1,10 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
 
 import "../assets/searchbar.css";
+import { LocationContext } from "../context";
 
 function SearchBar() {
   const [input, setInput] = useState("");
@@ -13,6 +14,7 @@ function SearchBar() {
   const { getCode, getName } = require("country-list");
   let navigate = useNavigate();
   let searchRef = useRef();
+  const [location, setLocation] = useContext(LocationContext)
 
   function handleChange(e) {
     const input_ = e.target.value;
@@ -76,8 +78,8 @@ function SearchBar() {
                   key={index}
                   onClick={(e) => {
                     setShowResults(false);
-                    navigate("/weather", { state: { place: result.name, lat: result.lat, lon: result.lon }});
-                    navigate(0);
+                    setLocation({ place: result.name, lat: result.lat, lon: result.lon })
+                    navigate("/weather");
                   }}
                 >
                   {result.name}, {result.country === "GB" ? "UK" : getName(result.country)}

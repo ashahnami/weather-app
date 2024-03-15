@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 import "../assets/info.css";
 import NavBar from "../components/NavBar";
@@ -13,11 +12,6 @@ import Rainfall from "../components/Rainfall";
 import UVIndex from "../components/UVIndex";
 
 function InfoPage() {
-  let location = useLocation();
-  let place = location.state ? location.state.place : "London";
-  let lat = location.state ? location.state.lat : 51.5072;
-  let lon = location.state ? location.state.lon : 0.1276;
-
   useEffect(() => {
     document.title = "Weather";
   });
@@ -29,17 +23,17 @@ function InfoPage() {
       <div className="info-container">
         <div className="flexbox-container row1">
           <div className="flexbox-item">
-            <KeyDetails place={place} lat={lat} lon={lon} />
+            <KeyDetails />
           </div>
 
           <div className="flexbox-item">
-            <Map lat={lat} lon={lon} />
+            {/* <Map /> */}
           </div>
         </div>
 
         <div className="flexbox-container row2">
           <div className="flexbox-item">
-            <Hourly lat={lat} lon={lon} />
+            <Hourly />
           </div>
         </div>
 
@@ -47,16 +41,16 @@ function InfoPage() {
           <div className="flexbox-item-bottom-row">
             <div className="flexbox-container">
               <div className="flexbox-item">
-                <UVIndex lat={lat} lon={lon} />
+                {/* <UVIndex /> */}
               </div>
             </div>
 
             <div className="flexbox-container">
               <div className="flexbox-item">
-                <Humidity lat={lat} lon={lon} />
+                <Humidity />
               </div>
               <div className="flexbox-item">
-                <Wind lat={lat} lon={lon} />
+                <Wind />
               </div>
             </div>
           </div>
@@ -64,7 +58,7 @@ function InfoPage() {
           <div className="flexbox-item-bottom-row">
             <div className="flexbox-container middle">
               <div className="flexbox-item">
-                <Daily lat={lat} lon={lon} />
+                <Daily />
               </div>
             </div>
           </div>
@@ -72,7 +66,7 @@ function InfoPage() {
           <div className="flexbox-item-bottom-row">
             <div className="flexbox-container">
               <div className="flexbox-item">
-                <Rainfall lat={lat} lon={lon} />
+                <Rainfall />
               </div>
             </div>
 
