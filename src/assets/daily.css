@@ -1,9 +1,9 @@
 .daily {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 100%;
-    padding: 10px;
     font-size: 1.4rem;
 }
 

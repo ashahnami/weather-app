@@ -7,22 +7,19 @@ import 'leaflet/dist/leaflet.css';
 
 function Map() { 
   const [location, setLocation]  = useContext(LocationContext);
-  const [coords, setCoords] = useState({})
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (location && location.lat) {
-      setCoords({x: location.lat, y: location.lon})
-      console.log(coords);
+    if (location) {
+      setIsLoaded(true);
     }
   }, [location])
-
-  //if(!location || !location.lat) return null;
   
   return (
     <>
-    { coords ? (
+    { isLoaded ? (
     <MapContainer 
-      center={[coords.x, coords.y]} 
+      center={[location.lat, location.lon]} 
       zoom={13} 
       scrollWheelZoom={false} 
       className='map'

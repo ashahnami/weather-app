@@ -13,7 +13,6 @@ function KeyDetails() {
       `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
     );
     setDetails(response.data);
-    console.log(response.data)
   };
 
   useEffect(() => {

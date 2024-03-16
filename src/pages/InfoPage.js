@@ -20,61 +20,41 @@ function InfoPage() {
     <div className="info">
       <NavBar />
 
-      <div className="info-container">
-        <div className="flexbox-container row1">
-          <div className="flexbox-item">
-            <KeyDetails />
-          </div>
-
-          <div className="flexbox-item">
-            {/* <Map /> */}
-          </div>
+      <div className="container">
+        <div className="box key-details">
+          <KeyDetails />
         </div>
 
-        <div className="flexbox-container row2">
-          <div className="flexbox-item">
-            <Hourly />
-          </div>
+        <div className="box map">
+          <Map />
         </div>
 
-        <div className="flexbox-container">
-          <div className="flexbox-item-bottom-row">
-            <div className="flexbox-container">
-              <div className="flexbox-item">
-                <UVIndex />
-              </div>
-            </div>
+        <div className="box hourly">
+          <Hourly />
+        </div>
 
-            <div className="flexbox-container">
-              <div className="flexbox-item">
-                <Humidity />
-              </div>
-              
-              <div className="flexbox-item">
-                <Wind />
-              </div>
-            </div>
-          </div>
+        <div className="box uv-index">
+          <UVIndex />
+        </div>
 
-          <div className="flexbox-item-bottom-row">
-            <div className="flexbox-container middle">
-              <div className="flexbox-item">
-                <Daily />
-              </div>
-            </div>
-          </div>
+        <div className="box daily">
+          <Daily />
+        </div>
 
-          <div className="flexbox-item-bottom-row">
-            <div className="flexbox-container">
-              <div className="flexbox-item">
-                <Rainfall />
-              </div>
-            </div>
+        <div className="box rainfall">
+          <Rainfall />
+        </div>
 
-            <div className="flexbox-container">
-              <div className="flexbox-item"></div>
-            </div>
-          </div>
+        <div className="box humidity">
+          <Humidity />
+        </div>
+
+        <div className="box wind">
+          <Wind />
+        </div>
+
+        <div className="box">
+
         </div>
       </div>
     </div>

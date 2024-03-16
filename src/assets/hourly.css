@@ -5,12 +5,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
 }
 
-.hourly div {
-    height: 75%;
-    width: 100%;
+.hourly .row {
     display: flex;
     flex-direction: column;
     align-items: center;

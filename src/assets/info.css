@@ -1,68 +1,69 @@
 .info {
     display: flex;
     flex-direction: column;
+    gap: 30px;
     align-items: center;
-    gap: 50px;
-    margin-top: 50px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 0.9fr 0.9fr 1fr 1.2fr;
+    grid-template-rows: 300px 1fr 1fr 1fr;
+    grid-gap: 14px;
+    max-width: 1260px;
     width: 100%;
+    height: 80vh;
 }
 
-.info-container {
-    width: 1280px;
+.container .box {
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
 }
 
-.flexbox-container{
-    display:flex;
-    width: 100%;
-}
-
-.flexbox-item{
-    width : 100%;
-    border : 3px solid black;
-    background-color:aliceblue;
-    margin: 10px;   
-    border-radius: 10px; 
-    min-height:100px;
-}
-
-
-.flexbox-item-bottom-row{
-    width : 100%;
-    min-height:200px;
-    margin: 10px;
-}
-
-.flexbox-item-daily{
-}
-
-.flexbox-item-2{
-}
-
-
-.flexbox-item-3{
-}
-
-.info .row1 {
-    height: 240px;
-}
-
-.info .row1 .flexbox-item:first-child {
+.container .key-details {
+    grid-column: 1 / 3;
+    grid-row: 1;
     border: none;
     background-color: transparent;
 }
 
-.info .row2 {
-    height: 180px;
+.container .map {
+    grid-column: 3 / 5;
+    grid-row: 1;
+    border: none;
+    border-radius: none;
+    padding: 0;
 }
 
-.info .row2 .flexbox-item {
-    background-color: #ffffff;
+.container .hourly {
+    grid-column: 1 / 5;
+    grid-row: 2;
 }
 
-.info .middle {
-    height: 100%;
+.container .uv-index {
+    grid-column: 1 / 3;
+    grid-row: 3;
 }
 
-.info .middle .flexbox-item {
-    background-color: #ffffff;
+.container .daily {
+    grid-column: 3;
+    grid-row: 3 / 5;
+    height: fit-content;
+}
+
+.container .rainfall {
+    grid-column: 4 / 5;
+    grid-row: 3;
+}
+
+.container .humidity {
+    grid-column: 1 / 2;
+    grid-row: 4;
+}
+
+.container .wind {
+    grid-column: 2 / 3;
+    grid-row: 4;
 }
