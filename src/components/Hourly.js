@@ -21,33 +21,19 @@ function Hourly() {
   }, [location])
 
     return (
-      
       <div className='hourly'>
-
-         {forecast.slice(0, 8)?.map((hourlyData, index) => {
-
-          return(
-
-          
-
-           <div key={index}>
-            
-          
+        {forecast.slice(0, 8)?.map((hourlyData, index) => {
+        return (
+          <div key={index}>
             <div>
-              <div className='time'>{new Date(hourlyData.dt * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+              <div className='time'>{new Date(hourlyData.dt * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute:'2-digit', hour12: false})}</div>
               <div className='icon'><img className='icon' src={`https://openweathermap.org/img/wn/${hourlyData.weather[0].icon}@2x.png`}></img></div>
-              <div className='temperature'>{Math.round(hourlyData.main.temp)}°<span>±0.5</span></div>
-              <div className='rainfall'>{hourlyData.pop*100}%</div>
+              <div className='temperature'>{Math.round(hourlyData.main.temp)}°</div>
+              <div className='rainfall'>{Math.round(hourlyData.pop*100)}%</div>
             </div>
-            
-          
           </div>
-
-          )
-          
-
-    })}
-
+        )
+        })}
       </div>
     )
 }

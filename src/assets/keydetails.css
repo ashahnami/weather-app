@@ -6,6 +6,12 @@
     height: 100%;
 }
 
+.keydetails .toprow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .keydetails .location {
     display: flex;
     flex-direction: row;

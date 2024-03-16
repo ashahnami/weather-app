@@ -7,32 +7,42 @@ import '../assets/daily.css';
 function Daily() {
     const [location, setLocation] = useContext(LocationContext);
     const [forecast, setForecast] = useState([]);
+    const weekdays = ['Sunday','Monday',"Tuesday","Wednesday","Thursday","Friday","Saturday"];
     let cnt=8;
-
+    
     const fetchData = () => {
-            axios
-            .get(`https://api.openweathermap.org/data/2.5/forecast/daily?lat=${location.lat}&lon=${location.lon}&cnt=${cnt}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
-            .then(function (response) {
-                setForecast(response.data.list);
-                console.log(response.data.list);
-            });
+        axios
+        .get(`https://api.openweathermap.org/data/2.5/forecast/daily?lat=${location.lat}&lon=${location.lon}&cnt=${cnt}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
+        .then(function (response) {
+            setForecast(response.data.list);
+        });
     }
-
+    
     useEffect(() => {
         if (location) fetchData();
     }, [location])
 
   return (
     <div className='daily'>
-        {forecast.map((x, index) => {
+        {forecast.map((day, index) => {
             return (
                 <div className='row' key={index}>
-                    <div className='day'>Day</div>
-                    <div><img className='icon' src={`https://openweathermap.org/img/wn/${x.weather[0].icon}@2x.png`}></img></div>
+                    <div className='day'>
+                        {index === 0 ? (
+                            "Today" 
+                            ) : ( 
+                            weekdays[new Date(day.dt * 1000).getDay()]
+                        )}
+                    </div>
+
+                    <div>
+                        <img className='icon' src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}></img>
+                    </div>
+
                     <div className='temperature'>
-                        <div>{Math.round(x.temp.min)}°</div>
+                        <div>{Math.round(day.temp.min)}°</div>
                         <div>/</div>
-                        <div>{Math.round(x.temp.max)}°</div>
+                        <div>{Math.round(day.temp.max)}°</div>
                     </div>
                 </div>
             )

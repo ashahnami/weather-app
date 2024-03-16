@@ -5,10 +5,15 @@
     align-items: center;
     text-align: center;
     height: 100%;
+    padding: 14px;
 }
 
 .humidity .title {
     font-size: 1.2rem;
+}
+
+.humidity .percentage {
+    font-size: 2rem;
 }
 
 

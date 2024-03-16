@@ -29,6 +29,7 @@ function Rainfall() {
           <div key={index}>
             <div>
               <div className="title">Precipitation</div>
+              
               <div className="rainfall">
                 <p>
                   Rainfall:{" "}
@@ -38,6 +39,7 @@ function Rainfall() {
                   mm
                 </p>
               </div>
+
               <div className="snowfall">
                 <p>
                   Snowfall:{" "}

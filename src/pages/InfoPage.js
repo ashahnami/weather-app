@@ -41,7 +41,7 @@ function InfoPage() {
           <div className="flexbox-item-bottom-row">
             <div className="flexbox-container">
               <div className="flexbox-item">
-                {/* <UVIndex /> */}
+                <UVIndex />
               </div>
             </div>
 
@@ -49,6 +49,7 @@ function InfoPage() {
               <div className="flexbox-item">
                 <Humidity />
               </div>
+              
               <div className="flexbox-item">
                 <Wind />
               </div>

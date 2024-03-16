@@ -8,13 +8,19 @@ function Wind() {
   const [location, setLocation] = useContext(LocationContext);
   const [wind, setWind] = useState(null);
 
+  const degreesToCompass = (degrees) => {
+    let val = Math.floor(degrees / 22.5 + 0.5);
+    let arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+    return arr[val % 16];
+  }
+
   const fetchData = () => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=imperial`
       )
       .then(function (response) {
-        setWind(response.data);
+        setWind(response.data.wind);
       });
   }
 
@@ -27,9 +33,9 @@ function Wind() {
       {wind ? (
         <>
           <div className="title">Wind</div>
-          <div className="speed">
-            {wind.wind.speed}m/s{" "}
-            <span className="direction">{wind.wind.deg}°</span>
+          
+          <div className="info">
+            {degreesToCompass(wind.deg) + ' ' + Math.round(wind.speed)}mph
           </div>
         </>
       ) : (

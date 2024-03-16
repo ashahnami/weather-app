@@ -5,8 +5,8 @@ import { LocationContext } from "../context";
 import "../assets/keydetails.css";
 
 function KeyDetails() {
-  const [details, setDetails] = useState(null);
   const [location, setLocation] = useContext(LocationContext)
+  const [details, setDetails] = useState(null);
 
   const fetchData = async () => {
     const response = await axios.get(
@@ -24,30 +24,38 @@ function KeyDetails() {
     <div className="keydetails">
       {details ? (
         <>
-          <div className="location">
-            {details.name}
-            <span className="SrSs">
+          <div className="toprow">
+            <div className="location">
+              {details.name}
+            </div>
+
+            <div className="SrSs">
               <p>
                 {" "}
                 Sunrise:{" "}
                 {new Date(details.sys.sunrise * 1000).toLocaleTimeString([], {
                   hour: "2-digit",
                   minute: "2-digit",
+                  hour12: false
                 })}{" "}
                 || Sunset:{" "}
                 {new Date(details.sys.sunset * 1000).toLocaleTimeString([], {
                   hour: "2-digit",
                   minute: "2-digit",
+                  hour12: false
                 })}{" "}
               </p>
-            </span>
+            </div>
           </div>
+
           <div className="temperature">
-            {Math.round(details.main.temp)}°<span className="range">±0.5</span>
+            {Math.round(details.main.temp)}°
+            {/* <span className="range">±0.5</span> */}
           </div>
+
           <div className="alt-temperature">
             <p>
-              Feels like <span>{Math.round(details.main.feels_like)}°C</span>
+              Feels like {Math.round(details.main.feels_like)}°C
             </p>
           </div>
         </>

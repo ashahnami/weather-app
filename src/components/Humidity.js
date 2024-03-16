@@ -27,6 +27,7 @@ function Humidity() {
       {humidity ? (
         <>
           <div className="title">Humidity</div>
+          
           <div className="percentage">{humidity.main.humidity}%</div>
         </>
       ) : (

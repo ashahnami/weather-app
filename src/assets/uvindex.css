@@ -1,6 +1,20 @@
 .uvindex {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 20px;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+    padding: 14px;
+}
+
+.uvindex .title {
+    font-size: 1.2rem;
+}
+
+.uvindex .class {
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
 }
