@@ -27,11 +27,12 @@ function UVIndex() {
   }
 
   const fetchData = () => {
-    axios
-      .get(`https://api.openweathermap.org/data/3.0/onecall?lat=${location.lat}&lon=${location.lon}&exclude=current,minutely,hourly&appid=${process.env.REACT_APP_API_KEY}`)
-      .then(function (response) {
-          setUV(response.data.daily[0]);
-      })
+    // axios
+    //   .get(`https://api.openweathermap.org/data/3.0/onecall?lat=${location.lat}&lon=${location.lon}&exclude=current,minutely,hourly&appid=${process.env.REACT_APP_API_KEY}`)
+    //   .then(function (response) {
+    //       setUV(response.data.daily[0].uvi);
+    //     })
+    setUV(3)
   }
 
   useEffect(() => {
@@ -43,7 +44,7 @@ function UVIndex() {
         <div className='title'>UV Index</div>
 
         <div className='class' style={determineClass(UV.uvi)}>
-          {Math.round(UV.uvi)}
+          {Math.round(UV)}
         </div>
     </div>
   )
