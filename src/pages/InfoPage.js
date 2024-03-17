@@ -19,6 +19,12 @@ function InfoPage() {
 
   const checkIsBookmarked = () => {
     let locations = JSON.parse(localStorage.getItem('locations'));
+
+    if (locations === null) {
+      setIsBookmarked(false);
+      return;
+    }
+
     for (let i=0; i<locations.data.length; i++) {
       if (_.isEqual(locations.data[i], location)) {
         setIsBookmarked(true);
@@ -51,6 +57,11 @@ function InfoPage() {
 
   const removeFromBookmarks = () => {
     let locations = JSON.parse(localStorage.getItem('locations'));
+
+    if (locations === null) {
+      return;
+    }
+
     for (let i=0; i<locations.data.length; i++) {
       if (_.isEqual(locations.data[i], location)) {
         locations.data.splice(i, 1);
@@ -63,7 +74,7 @@ function InfoPage() {
 
   useEffect(() => {
     document.title = "Weather";
-    checkIsBookmarked();
+    if (location) checkIsBookmarked();
   }, [location]);
 
   return (
