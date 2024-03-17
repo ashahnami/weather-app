@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import _ from 'lodash';
 
 import "../assets/info.css";
 import NavBar from "../components/NavBar";
@@ -10,8 +11,31 @@ import Humidity from "../components/Humidity";
 import Wind from "../components/Wind";
 import Rainfall from "../components/Rainfall";
 import UVIndex from "../components/UVIndex";
+import { LocationContext } from "../context";
 
 function InfoPage() {
+  const [location, setLocation] = useContext(LocationContext);
+
+  const bookmarkLocation = () => {
+    if (!localStorage.getItem('locations')) {
+      let locations = {data: []};
+      locations.data[0] = location;
+      localStorage.setItem('locations', JSON.stringify(locations));
+      return
+    }
+
+    let locations = JSON.parse(localStorage.getItem('locations'));
+    for (let i=0; i<locations.data.length; i++) {
+      if (_.isEqual(locations.data[i], location)) {
+        return;
+      }
+    }
+
+    let arr = JSON.parse(localStorage.getItem('locations'));
+    arr.data.push(location);
+    localStorage.setItem('locations', JSON.stringify(arr));
+  }
+
   useEffect(() => {
     document.title = "Weather";
   });
@@ -19,6 +43,8 @@ function InfoPage() {
   return (
     <div className="info">
       <NavBar />
+
+      <div onClick={bookmarkLocation}>Save location</div>
 
       <div className="container">
         <div className="box key-details">

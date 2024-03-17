@@ -11,3 +11,28 @@
     gap: 100px;
     width: 1280px;
 }
+
+.landing .bookmarks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.landing .bookmarks .bookmark {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    height: 100px;
+    background-color: #86a8b3;
+    transition: 0.2s;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.landing .bookmarks .bookmark:hover {
+    background-color: aquamarine;
+    cursor: pointer;
+}
