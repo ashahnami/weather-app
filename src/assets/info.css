@@ -5,6 +5,14 @@
     align-items: center;
 }
 
+.info .bookmark {
+    cursor: pointer;
+}
+
+.info .bookmark:hover {
+    font-weight: 600;
+}
+
 .container {
     display: grid;
     grid-template-columns: 0.9fr 0.9fr 1fr 1.2fr;

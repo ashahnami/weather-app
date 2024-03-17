@@ -78,7 +78,7 @@ function SearchBar() {
                   key={index}
                   onClick={(e) => {
                     setShowResults(false);
-                    setLocation({ place: result.name, lat: result.lat, lon: result.lon })
+                    setLocation({ place: result.name, lat: result.lat, lon: result.lon });
                     navigate("/weather");
                   }}
                 >
