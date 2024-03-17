@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { LocationContext } from '../context';
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
 
+import { LocationContext } from '../context';
 import '../assets/hourly.css';
 
 function Hourly() {
@@ -32,7 +33,11 @@ function Hourly() {
 
             <div className='temperature'>{Math.round(hourlyData.main.temp)}°</div>
             
-            <div className='rainfall'>{Math.round(hourlyData.pop*100)}%</div>
+            <div className='rainfall'>
+              <WaterDropIcon className='icon'/>
+
+              <div className='value'>{Math.round(hourlyData.pop*100)}%</div>  
+            </div>
           </div>
         )
         })}

@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { LocationContext } from "../context";
 
+import { LocationContext } from "../context";
+import { MeteoconsSunsetFill } from '../assets/images/MeteoconsSunsetFill'
 import "../assets/keydetails.css";
 
 function KeyDetails() {
@@ -28,21 +29,21 @@ function KeyDetails() {
               {details.name}
             </div>
 
-            <div className="SrSs">
+            <div className="sunset-sunrise">
+              <MeteoconsSunsetFill />
+
               <p>
-                {" "}
                 Sunrise:{" "}
                 {new Date(details.sys.sunrise * 1000).toLocaleTimeString([], {
-                  hour: "2-digit",
-                  minute: "2-digit",
+                  hour: "2-digit", 
+                  minute: "2-digit", 
                   hour12: false
-                })}{" "}
-                || Sunset:{" "}
+                })}{" || Sunset: "}
                 {new Date(details.sys.sunset * 1000).toLocaleTimeString([], {
                   hour: "2-digit",
                   minute: "2-digit",
                   hour12: false
-                })}{" "}
+                })}
               </p>
             </div>
           </div>

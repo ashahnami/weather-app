@@ -32,6 +32,10 @@
     font-size: 1.2rem;
 }
 
-.keydetails .SrSs {
+.keydetails .sunset-sunrise {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
     font-size: 1rem;
 }
