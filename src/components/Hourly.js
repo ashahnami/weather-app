@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import WaterDropIcon from '@mui/icons-material/WaterDrop';
+//  import WaterDropIcon from '@mui/icons-material/WaterDrop';
 
 import { LocationContext } from '../context';
 import '../assets/hourly.css';
@@ -31,10 +31,10 @@ function Hourly() {
 
             <div className='icon'><img className='icon' src={`https://openweathermap.org/img/wn/${hourlyData.weather[0].icon}@2x.png`}></img></div>
 
-            <div className='temperature'>{Math.round(hourlyData.main.temp)}°</div>
+            <div className='temperature'>{Math.round(hourlyData.main.temp)}±{(hourlyData.main.temp_max-hourlyData.main.temp_min).toFixed(2)}°</div>
             
             <div className='rainfall'>
-              <WaterDropIcon className='icon'/>
+              {/*<WaterDropIcon className='icon'/>*/}
 
               <div className='value'>{Math.round(hourlyData.pop*100)}%</div>  
             </div>
