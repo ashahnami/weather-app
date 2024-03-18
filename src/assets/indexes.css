@@ -9,6 +9,11 @@
     padding: 14px;
 }
 
+.uvindex .index {
+    text-align: center;
+    width: 100%;
+}
+
 .uvindex .title {
     font-size: 1.2rem;
 }

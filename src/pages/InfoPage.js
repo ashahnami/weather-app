@@ -12,7 +12,7 @@ import Map from "../components/Map";
 import Humidity from "../components/Humidity";
 import Wind from "../components/Wind";
 import Rainfall from "../components/Rainfall";
-import UVIndex from "../components/UVIndex";
+import Indexes from "../components/Indexes";
 import { LocationContext } from "../context";
 
 function InfoPage() {
@@ -105,7 +105,7 @@ function InfoPage() {
         </div>
 
         <div className="box uv-index">
-          <UVIndex />
+          <Indexes />
         </div>
 
         <div className="box daily">
