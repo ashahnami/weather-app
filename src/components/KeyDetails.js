@@ -10,13 +10,10 @@ function KeyDetails() {
   const [details, setDetails] = useState(null);
 
   const fetchData = async () => {
-    console.log(location.lat);
-    console.log(location.lon);
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
     );
     setDetails(response.data);
-    console.log(response.data);
   };
 
   useEffect(() => {

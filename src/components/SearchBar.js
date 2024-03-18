@@ -87,6 +87,7 @@ function SearchBar() {
                       lat: result.lat,
                       lon: result.lon,
                     });
+                    localStorage.setItem('location', JSON.stringify({place: result.name, lat: result.lat, lon: result.lon}));
                     navigate("/weather");
                   }}
                 >

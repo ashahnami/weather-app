@@ -14,7 +14,6 @@ function Hourly() {
     .get(`https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
     .then(function (response) {
         setForecast(response.data.list);
-        console.log(response.data.list[0])
     });
   }
 
