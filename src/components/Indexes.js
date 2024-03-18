@@ -59,8 +59,8 @@ function UVIndex() {
     //   .then(function (response) {
     //       setAirPollution(response.data.list[0].main.aqi);
     //     })
-    // setUV(3);
-    // setAirPollution(2);
+    setUV(3);
+    setAirPollution(2);
   }
 
   useEffect(() => {
