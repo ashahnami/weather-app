@@ -15,6 +15,10 @@
     text-align: center;
 }
 
+.daily .row .day {
+    text-align: left;
+}
+
 .daily .row div {
     flex-grow: 1;
     width: 33%;
@@ -22,6 +26,10 @@
 
 .daily .row img {
     height: 50px;
+}
+
+.daily .row .temperature {
+    text-align: right;
 }
 
 .daily .row .temperature div {
