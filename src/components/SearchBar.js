@@ -11,10 +11,12 @@ function SearchBar() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
-  const { getCode, getName } = require("country-list");
+  // const { getCode, getName } = require("country-list");
   let navigate = useNavigate();
   let searchRef = useRef();
   const [location, setLocation] = useContext(LocationContext);
+  var countries = require("i18n-iso-countries");
+  countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
 
   function handleChange(e) {
     const input_ = e.target.value;
@@ -81,18 +83,35 @@ function SearchBar() {
                   className="result"
                   key={index}
                   onClick={(e) => {
+                    console.log(
+                      countries.getName(result.country, "en", { alias: true })
+                    );
+
                     setShowResults(false);
                     setLocation({
                       place: result.name,
+                      country: countries.getName(result.country, "en", {
+                        alias: true,
+                      }),
                       lat: result.lat,
                       lon: result.lon,
                     });
-                    localStorage.setItem('location', JSON.stringify({place: result.name, lat: result.lat, lon: result.lon}));
+                    localStorage.setItem(
+                      "location",
+                      JSON.stringify({
+                        country: countries.getName(result.country, "en", {
+                          alias: true,
+                        }),
+                        place: result.name,
+                        lat: result.lat,
+                        lon: result.lon,
+                      })
+                    );
                     navigate("/weather");
                   }}
                 >
                   {result.name},{" "}
-                  {result.country === "GB" ? "UK" : getName(result.country)}
+                  {countries.getName(result.country, "en", { alias: true })}
                 </div>
               );
             })

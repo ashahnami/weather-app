@@ -59,7 +59,7 @@ function LandingPage() {
                       }}
                       key={index}
                     >
-                      <div>{bookmark.place}</div>
+                      <div>{bookmark.place}, {bookmark.country}</div>
 
                       <div>{details[index]}°</div>
                     </div>
