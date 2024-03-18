@@ -48,17 +48,17 @@ function UVIndex() {
   }
 
   const fetchData = () => {
-    axios
-      .get(`https://api.openweathermap.org/data/3.0/onecall?lat=${location.lat}&lon=${location.lon}&exclude=current,minutely,hourly&appid=${process.env.REACT_APP_API_KEY}`)
-      .then(function (response) {
-          setUV(response.data.daily[0].uvi);
-        })
+    // axios
+    //   .get(`https://api.openweathermap.org/data/3.0/onecall?lat=${location.lat}&lon=${location.lon}&exclude=current,minutely,hourly&appid=${process.env.REACT_APP_API_KEY}`)
+    //   .then(function (response) {
+    //       setUV(response.data.daily[0].uvi);
+    //     })
 
-    axios
-      .get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}`)
-      .then(function (response) {
-          setAirPollution(response.data.list[0].main.aqi);
-        })
+    // axios
+    //   .get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}`)
+    //   .then(function (response) {
+    //       setAirPollution(response.data.list[0].main.aqi);
+    //     })
     // setUV(3);
     // setAirPollution(2);
   }
