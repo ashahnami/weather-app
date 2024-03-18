@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import _ from 'lodash';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 
 import "../assets/info.css";
 import NavBar from "../components/NavBar";
@@ -79,13 +81,15 @@ function InfoPage() {
 
   return (
     <div className="info">
-      <NavBar />
+      <div className="header">
+        <NavBar />
 
-      {isBookmarked ? (
-        <div className='bookmark' onClick={removeFromBookmarks}>Remove bookmark</div>
-      ) : (
-        <div className='bookmark' onClick={bookmarkLocation}>Save location</div>
-      )}
+        {isBookmarked ? (
+          <BookmarkIcon className='bookmark' onClick={removeFromBookmarks} />
+        ) : (
+          <BookmarkBorderIcon className='bookmark' onClick={bookmarkLocation} />
+        )}
+      </div>
 
       <div className="container">
         <div className="box key-details">
