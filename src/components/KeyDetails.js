@@ -25,7 +25,7 @@ function KeyDetails() {
       {details ? (
         <>
           <div className="toprow">
-            <div className="location">{location.place}</div>
+            <div className="location">{location.place}, {location.country}</div>
 
             <div className="sunset-sunrise">
               <MeteoconsSunsetFill />
