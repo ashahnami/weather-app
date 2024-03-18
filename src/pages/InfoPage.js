@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import _ from 'lodash';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import _ from "lodash";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 import "../assets/info.css";
 import NavBar from "../components/NavBar";
@@ -20,59 +20,59 @@ function InfoPage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const checkIsBookmarked = () => {
-    let locations = JSON.parse(localStorage.getItem('locations'));
+    let locations = JSON.parse(localStorage.getItem("locations"));
 
     if (locations === null) {
       setIsBookmarked(false);
       return;
     }
 
-    for (let i=0; i<locations.data.length; i++) {
+    for (let i = 0; i < locations.data.length; i++) {
       if (_.isEqual(locations.data[i], location)) {
         setIsBookmarked(true);
         return;
       }
     }
-  }
+  };
 
   const bookmarkLocation = () => {
-    if (!localStorage.getItem('locations')) {
-      let locations = {data: []};
+    if (!localStorage.getItem("locations")) {
+      let locations = { data: [] };
       locations.data[0] = location;
-      localStorage.setItem('locations', JSON.stringify(locations));
+      localStorage.setItem("locations", JSON.stringify(locations));
       setIsBookmarked(true);
-      return
+      return;
     }
 
-    let locations = JSON.parse(localStorage.getItem('locations'));
-    for (let i=0; i<locations.data.length; i++) {
+    let locations = JSON.parse(localStorage.getItem("locations"));
+    for (let i = 0; i < locations.data.length; i++) {
       if (_.isEqual(locations.data[i], location)) {
         return;
       }
     }
 
-    let arr = JSON.parse(localStorage.getItem('locations'));
+    let arr = JSON.parse(localStorage.getItem("locations"));
     arr.data.push(location);
-    localStorage.setItem('locations', JSON.stringify(arr));
+    localStorage.setItem("locations", JSON.stringify(arr));
     setIsBookmarked(true);
-  }
+  };
 
   const removeFromBookmarks = () => {
-    let locations = JSON.parse(localStorage.getItem('locations'));
+    let locations = JSON.parse(localStorage.getItem("locations"));
 
     if (locations === null) {
       return;
     }
 
-    for (let i=0; i<locations.data.length; i++) {
+    for (let i = 0; i < locations.data.length; i++) {
       if (_.isEqual(locations.data[i], location)) {
         locations.data.splice(i, 1);
-        localStorage.setItem('locations', JSON.stringify(locations));
+        localStorage.setItem("locations", JSON.stringify(locations));
         setIsBookmarked(false);
         return;
       }
     }
-  }
+  };
 
   useEffect(() => {
     document.title = "Weather";
@@ -85,9 +85,9 @@ function InfoPage() {
         <NavBar />
 
         {isBookmarked ? (
-          <BookmarkIcon className='bookmark' onClick={removeFromBookmarks} />
+          <BookmarkIcon className="bookmark" onClick={removeFromBookmarks} />
         ) : (
-          <BookmarkBorderIcon className='bookmark' onClick={bookmarkLocation} />
+          <BookmarkBorderIcon className="bookmark" onClick={bookmarkLocation} />
         )}
       </div>
 
@@ -124,9 +124,7 @@ function InfoPage() {
           <Wind />
         </div>
 
-        <div className="box">
-
-        </div>
+        <div className="box"></div>
       </div>
     </div>
   );

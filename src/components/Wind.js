@@ -10,9 +10,26 @@ function Wind() {
 
   const degreesToCompass = (degrees) => {
     let val = Math.floor(degrees / 22.5 + 0.5);
-    let arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+    let arr = [
+      "N",
+      "NNE",
+      "NE",
+      "ENE",
+      "E",
+      "ESE",
+      "SE",
+      "SSE",
+      "S",
+      "SSW",
+      "SW",
+      "WSW",
+      "W",
+      "WNW",
+      "NW",
+      "NNW",
+    ];
     return arr[val % 16];
-  }
+  };
 
   const fetchData = () => {
     axios
@@ -22,20 +39,20 @@ function Wind() {
       .then(function (response) {
         setWind(response.data.wind);
       });
-  }
+  };
 
-    useEffect(() => {
-      if (location) fetchData();
-    }, [location])
+  useEffect(() => {
+    if (location) fetchData();
+  }, [location]);
 
   return (
     <div className="wind">
       {wind ? (
         <>
           <div className="title">Wind</div>
-          
+
           <div className="info">
-            {degreesToCompass(wind.deg) + ' ' + Math.round(wind.speed)}mph
+            {degreesToCompass(wind.deg) + " " + Math.round(wind.speed)}mph
           </div>
         </>
       ) : (

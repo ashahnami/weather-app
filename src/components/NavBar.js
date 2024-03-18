@@ -1,20 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import SearchBar from './SearchBar';
+import SearchBar from "./SearchBar";
 
-import '../assets/navbar.css';
+import "../assets/navbar.css";
 
 function Home() {
   return (
-    <div className='navbar'>
-      <div className='navbar-container'>
-          <Link to="/" className='link'>Home</Link>
+    <div className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="link">
+          Home
+        </Link>
 
-          <SearchBar />
+        <SearchBar />
       </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

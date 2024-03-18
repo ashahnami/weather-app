@@ -10,13 +10,13 @@ function Rainfall() {
 
   const fetchData = () => {
     axios
-    .get(
+      .get(
         `https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
       )
       .then(function (response) {
         setPrecip(response.data.list);
       });
-  }
+  };
 
   useEffect(() => {
     if (location) fetchData();
@@ -29,7 +29,7 @@ function Rainfall() {
           <div key={index}>
             <div>
               <div className="title">Precipitation</div>
-              
+
               <div className="rainfall">
                 <p>
                   Rainfall:{" "}

@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import SearchIcon from '@mui/icons-material/Search';
-import ClearIcon from '@mui/icons-material/Clear';
+import SearchIcon from "@mui/icons-material/Search";
+import ClearIcon from "@mui/icons-material/Clear";
 
 import "../assets/searchbar.css";
 import { LocationContext } from "../context";
@@ -14,7 +14,7 @@ function SearchBar() {
   const { getCode, getName } = require("country-list");
   let navigate = useNavigate();
   let searchRef = useRef();
-  const [location, setLocation] = useContext(LocationContext)
+  const [location, setLocation] = useContext(LocationContext);
 
   function handleChange(e) {
     const input_ = e.target.value;
@@ -66,7 +66,11 @@ function SearchBar() {
           onFocus={() => setShowResults(true)}
         />
 
-        {input.length > 0 ? <ClearIcon onClick={clearInput} className="clear-icon" /> : <SearchIcon className="search-icon" />}
+        {input.length > 0 ? (
+          <ClearIcon onClick={clearInput} className="clear-icon" />
+        ) : (
+          <SearchIcon className="search-icon" />
+        )}
       </div>
 
       <div className="results">
@@ -78,11 +82,16 @@ function SearchBar() {
                   key={index}
                   onClick={(e) => {
                     setShowResults(false);
-                    setLocation({ place: result.name, lat: result.lat, lon: result.lon });
+                    setLocation({
+                      place: result.name,
+                      lat: result.lat,
+                      lon: result.lon,
+                    });
                     navigate("/weather");
                   }}
                 >
-                  {result.name}, {result.country === "GB" ? "UK" : getName(result.country)}
+                  {result.name},{" "}
+                  {result.country === "GB" ? "UK" : getName(result.country)}
                 </div>
               );
             })

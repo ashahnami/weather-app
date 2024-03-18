@@ -1,8 +1,8 @@
-import axios from 'axios';
-import React, { useState, useEffect, useContext } from 'react';
-import { LocationContext } from '../context';
+import axios from "axios";
+import React, { useState, useEffect, useContext } from "react";
+import { LocationContext } from "../context";
 
-import '../assets/indexes.css';
+import "../assets/indexes.css";
 
 function UVIndex() {
   const [location, setLocation] = useContext(LocationContext);
@@ -10,42 +10,42 @@ function UVIndex() {
   const [airPollution, setAirPollution] = useState({});
 
   const determineClass = (value) => {
-    let colorClass = '';
+    let colorClass = "";
 
     if (value >= 11) {
-      colorClass = '#8f3f97';
+      colorClass = "#8f3f97";
     } else if (value >= 8) {
-      colorClass = '#ff0000';
+      colorClass = "#ff0000";
     } else if (value >= 6) {
-      colorClass = '#ff7e00';
+      colorClass = "#ff7e00";
     } else if (value >= 3) {
-      colorClass = '#ffff00';
+      colorClass = "#ffff00";
     } else {
-      colorClass = '#00e400';
+      colorClass = "#00e400";
     }
 
-    return {'background': colorClass};
-  }
+    return { background: colorClass };
+  };
 
   const determineAqiClass = (value) => {
-    let colorClass = '';
+    let colorClass = "";
 
     if (value >= 301) {
-      colorClass = '#7e0023';
+      colorClass = "#7e0023";
     } else if (value >= 201) {
-      colorClass = '#8f3f97';
+      colorClass = "#8f3f97";
     } else if (value >= 151) {
-      colorClass = '#ff0000';
+      colorClass = "#ff0000";
     } else if (value >= 101) {
-      colorClass = '#ff7e00';
+      colorClass = "#ff7e00";
     } else if (value >= 51) {
-      colorClass = '#ffff00';
+      colorClass = "#ffff00";
     } else {
-      colorClass = '#00e400';
+      colorClass = "#00e400";
     }
 
-    return {'background': colorClass};
-  }
+    return { background: colorClass };
+  };
 
   const fetchData = () => {
     // axios
@@ -61,31 +61,31 @@ function UVIndex() {
     //     })
     setUV(3);
     setAirPollution(2);
-  }
+  };
 
   useEffect(() => {
     if (location) fetchData();
-  }, [location])
+  }, [location]);
 
   return (
-    <div className='uvindex'>
-      <div className='index'>
-        <div className='title'>UV Index</div>
+    <div className="uvindex">
+      <div className="index">
+        <div className="title">UV Index</div>
 
-        <div className='class' style={determineClass(UV.uvi)}>
+        <div className="class" style={determineClass(UV.uvi)}>
           {Math.round(UV)}
         </div>
       </div>
 
-      <div className='index'>
-        <div className='title'>Air Pollution</div>
+      <div className="index">
+        <div className="title">Air Pollution</div>
 
-        <div className='class' style={determineAqiClass(UV.uvi)}>
+        <div className="class" style={determineAqiClass(UV.uvi)}>
           {Math.round(UV)}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default UVIndex;

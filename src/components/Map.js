@@ -20,7 +20,7 @@ function Map() {
     { isLoaded ? (
     <MapContainer 
       center={[location.lat, location.lon]} 
-      zoom={13} 
+      zoom={5} 
       scrollWheelZoom={false} 
       className='map'
     >

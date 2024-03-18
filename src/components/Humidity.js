@@ -16,18 +16,18 @@ function Humidity() {
       .then(function (response) {
         setHumidity(response.data);
       });
-  }
+  };
 
   useEffect(() => {
     if (location) fetchData();
-  }, [location])
+  }, [location]);
 
   return (
     <div className="humidity">
       {humidity ? (
         <>
           <div className="title">Humidity</div>
-          
+
           <div className="percentage">{humidity.main.humidity}%</div>
         </>
       ) : (

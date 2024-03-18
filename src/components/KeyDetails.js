@@ -2,21 +2,21 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 import { LocationContext } from "../context";
-import { MeteoconsSunsetFill } from '../assets/images/MeteoconsSunsetFill'
+import { MeteoconsSunsetFill } from "../assets/images/MeteoconsSunsetFill";
 import "../assets/keydetails.css";
 
 function KeyDetails() {
-  const [location, setLocation] = useContext(LocationContext)
+  const [location, setLocation] = useContext(LocationContext);
   const [details, setDetails] = useState(null);
 
   const fetchData = async () => {
-    console.log(location.lat)
-    console.log(location.lon)
+    console.log(location.lat);
+    console.log(location.lon);
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
     );
     setDetails(response.data);
-    console.log(response.data)
+    console.log(response.data);
   };
 
   useEffect(() => {
@@ -28,9 +28,7 @@ function KeyDetails() {
       {details ? (
         <>
           <div className="toprow">
-            <div className="location">
-              {location.place}
-            </div>
+            <div className="location">{location.place}</div>
 
             <div className="sunset-sunrise">
               <MeteoconsSunsetFill />
@@ -38,14 +36,15 @@ function KeyDetails() {
               <p>
                 Sunrise:{" "}
                 {new Date(details.sys.sunrise * 1000).toLocaleTimeString([], {
-                  hour: "2-digit", 
-                  minute: "2-digit", 
-                  hour12: false
-                })}{" || Sunset: "}
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: false,
+                })}
+                {" || Sunset: "}
                 {new Date(details.sys.sunset * 1000).toLocaleTimeString([], {
                   hour: "2-digit",
                   minute: "2-digit",
-                  hour12: false
+                  hour12: false,
                 })}
               </p>
             </div>
@@ -57,9 +56,7 @@ function KeyDetails() {
           </div>
 
           <div className="alt-temperature">
-            <p>
-              Feels like {Math.round(details.main.feels_like)}°C
-            </p>
+            <p>Feels like {Math.round(details.main.feels_like)}°C</p>
           </div>
         </>
       ) : (
