@@ -31,7 +31,11 @@ function Hourly() {
 
             <div className='icon'><img className='icon' src={`https://openweathermap.org/img/wn/${hourlyData.weather[0].icon}@2x.png`}></img></div>
 
-            <div className='temperature'>{Math.round(hourlyData.main.temp)}±{(hourlyData.main.temp_max-hourlyData.main.temp_min).toFixed(2)}°</div>
+            <div className='temperature'>{Math.round(hourlyData.main.temp)}°
+              <span>
+                ±{((hourlyData.main.temp_max - hourlyData.main.temp_min) / 2).toFixed(2)}
+              </span>
+            </div>
             
             <div className='rainfall'>
               {/*<WaterDropIcon className='icon'/>*/}
