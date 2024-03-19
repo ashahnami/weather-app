@@ -31,7 +31,7 @@ function Daily() {
                         {index === 0 ? (
                             "Today" 
                             ) : ( 
-                            weekdays[new Date(day.dt * 1000).getDay()]
+                            weekdays[new Date(day.dt * 1000).getDay()] + ' ' + new Date(day.dt * 1000).getUTCDate()
                         )}
                     </div>
 

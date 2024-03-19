@@ -16,7 +16,8 @@
 }
 
 .daily .row .day {
-    text-align: left;
+    display: flex;
+    /* text-align: left; */
 }
 
 .daily .row div {

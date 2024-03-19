@@ -49,11 +49,23 @@ function Wind() {
     <div className="wind">
       {wind ? (
         <>
+        <div>
           <div className="title">Wind</div>
 
           <div className="info">
-            {degreesToCompass(wind.deg) + " " + Math.round(wind.speed)}mph
+            {degreesToCompass(wind.deg) + " " + Math.round(wind.speed)} mph
           </div>
+        </div>
+
+        {wind.gust ? (
+        <div>
+          <div className="title">Gust</div>
+
+          <div className="info">
+            {Math.round(wind.gust)} mph
+          </div>
+        </div>
+        ) : null }
         </>
       ) : (
         <p>Loading...</p>
