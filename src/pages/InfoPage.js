@@ -127,7 +127,9 @@ function InfoPage() {
           <Wind />
         </div>
 
-        <div className="box"><Alert /></div>
+        <div className="box br">
+          <Alert />
+        </div>
       </div>
     </div>
   );
