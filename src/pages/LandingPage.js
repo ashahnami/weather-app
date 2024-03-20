@@ -8,35 +8,33 @@ import axios from "axios";
 
 function LandingPage() {
   const [location, setLocation] = useContext(LocationContext);
-  const [details, setDetails] = useState([]);
+  const [details, setDetails] = useState();
 
   let navigate = useNavigate();
 
-  const fetchPrice = async (bookmark) => {
+  const fetchWeather = async (bookmark) => {
     try {
       const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${bookmark.lat}&lon=${bookmark.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
       );
-      return Math.round(response.data.main.temp);
+      return response.data;
     } catch (error) {
-      console.error(error);
       return null;
     }
   };
 
-  useEffect(() => {
-    if (location) {
-      const fetchPricesForBookmarks = async () => {
-        try {
-          const locations = JSON.parse(localStorage.getItem("locations")).data;
-          const details = await Promise.all(locations.map(fetchPrice));
-          setDetails(details);
-        } catch (error) {
-          console.error(error);
-        }
-      };
-      fetchPricesForBookmarks();
+  const fetchWeatherForBookmarks = async () => {
+    try {
+      const locations = JSON.parse(localStorage.getItem("locations")).data;
+      const details = await Promise.all(locations.map(fetchWeather));
+      setDetails(details);
+    } catch (error) {
+      console.error(error);
     }
+  };
+
+  useEffect(() => {
+    if (location) fetchWeatherForBookmarks();
   }, [location]);
 
   return (
@@ -49,23 +47,38 @@ function LandingPage() {
         <div className="bookmarks">
           {localStorage.getItem("locations")
             ? JSON.parse(localStorage.getItem("locations")).data.map(
-                (bookmark, index) => {
-                  return (
-                    <div
-                      className="bookmark"
-                      onClick={() => {
-                        setLocation(bookmark);
-                        navigate("/weather");
-                      }}
-                      key={index}
-                    >
-                      <div>{bookmark.place}, {bookmark.country}</div>
+              (bookmark, index) => {
+                return (
+                  <div
+                    className="bookmark"
+                    onClick={() => {
+                      setLocation(bookmark);
+                      navigate("/weather");
+                    }}
+                    key={index}
+                  >
 
-                      <div>{details[index]}°</div>
-                    </div>
-                  );
-                }
-              )
+                    {details ? (
+                      <>
+                        <div>
+                          <div>{bookmark.place}, {bookmark.country}</div>
+                          <div className="description">
+                            {details[index].weather[0].description.charAt(0).toUpperCase() +
+                              details[index].weather[0].description.slice(1)}
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="max-temp">{Math.round(details[index].main.temp_max)}°</div>
+                          <div className="min-temp">{Math.round(details[index].main.temp_min)}°</div>
+                        </div>
+                      </>
+                    ) : null}
+
+                  </div>
+                );
+              }
+            )
             : null}
         </div>
       </div>

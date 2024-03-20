@@ -16,6 +16,8 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .landing .bookmarks .bookmark {
@@ -33,6 +35,18 @@
 }
 
 .landing .bookmarks .bookmark:hover {
-    background-color: aquamarine;
+    background-color: #647780;
     cursor: pointer;
+}
+
+.landing .bookmark .description {
+    font-weight: 400;
+}
+
+.landing .bookmark .min-temp {
+    font-weight: 400;
+}
+
+.landing .bookmark .max-temp {
+    font-weight: 600;
 }
