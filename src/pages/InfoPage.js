@@ -13,6 +13,7 @@ import Humidity from "../components/Humidity";
 import Wind from "../components/Wind";
 import Rainfall from "../components/Rainfall";
 import Indexes from "../components/Indexes";
+import Alert from "../components/Alert";
 import { LocationContext } from "../context";
 
 function InfoPage() {
@@ -126,7 +127,7 @@ function InfoPage() {
           <Wind />
         </div>
 
-        <div className="box"></div>
+        <div className="box"><Alert /></div>
       </div>
     </div>
   );
