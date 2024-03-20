@@ -14,10 +14,22 @@
 
 .landing .bookmarks {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     gap: 12px;
     color: #ffffff;
     font-weight: 600;
+}
+
+.landing .bookmarks .row {
+    display: flex;
+}
+
+.landing .bookmarks .bookmark-icon {
+    position: relative;
+    top: 2px;
+    right: 25px;
+    cursor: pointer;
 }
 
 .landing .bookmarks .bookmark {
