@@ -5,9 +5,12 @@ import { LocationContext } from "../context";
 import "../assets/wind.css";
 
 function Wind() {
+   // Using useContext hook to access location data
   const [location, setLocation] = useContext(LocationContext);
+  // Using useState hook to manage weather details state
   const [wind, setWind] = useState(null);
 
+  // function to convert degree of wind direction to compass direction
   const degreesToCompass = (degrees) => {
     let val = Math.floor(degrees / 22.5 + 0.5);
     let arr = [
@@ -31,6 +34,7 @@ function Wind() {
     return arr[val % 16];
   };
 
+  // fetch data from OpenWeatherMap API
   const fetchData = () => {
     axios
       .get(
@@ -41,6 +45,7 @@ function Wind() {
       });
   };
 
+  // fetch data when location changes
   useEffect(() => {
     if (location) fetchData();
   }, [location]);
@@ -51,7 +56,7 @@ function Wind() {
         <>
         <div>
           <div className="title">Wind</div>
-
+          {/* Display wind direction and speed (using compass directions by calling function degreesToCompass) */}
           <div className="info">
             {degreesToCompass(wind.deg) + " " + Math.round(wind.speed)} mph
           </div>
@@ -60,7 +65,7 @@ function Wind() {
         {wind.gust ? (
         <div>
           <div className="title">Gust</div>
-
+          {/* Displaying gust information  */}
           <div className="info">
             {Math.round(wind.gust)} mph
           </div>
@@ -68,6 +73,7 @@ function Wind() {
         ) : null }
         </>
       ) : (
+        // Displaying loading message while fetching data
         <p>Loading...</p>
       )}
     </div>

@@ -5,9 +5,12 @@ import { LocationContext } from "../context";
 import "../assets/humidity.css";
 
 function Humidity() {
+  // Using useContext hook to access location data
   const [location, setLocation] = useContext(LocationContext);
+  // Using useState hook to manage humidity state
   const [humidity, setHumidity] = useState(null);
 
+  // fetch weather data from OpenWeatherMap API
   const fetchData = () => {
     axios
       .get(
@@ -18,6 +21,7 @@ function Humidity() {
       });
   };
 
+  // fetch data when location changes
   useEffect(() => {
     if (location) fetchData();
   }, [location]);
@@ -27,10 +31,11 @@ function Humidity() {
       {humidity ? (
         <>
           <div className="title">Humidity</div>
-
+          {/* Display Humidity % */}
           <div className="percentage">{humidity.main.humidity}%</div>
         </>
       ) : (
+        // Display loading message while data fetching is occuring
         <p>Loading...</p>
       )}
     </div>
