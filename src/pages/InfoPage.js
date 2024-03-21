@@ -23,7 +23,7 @@ function InfoPage() {
   const checkIsBookmarked = () => {
     let locations = JSON.parse(localStorage.getItem("locations"));
 
-    if (locations.data === null) {
+    if (locations === null || locations.data === null) {
       setIsBookmarked(false);
       return;
     }
