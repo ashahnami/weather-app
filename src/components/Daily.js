@@ -10,6 +10,7 @@ function Daily() {
     const weekdays = ['Sun','Mon',"Tue","Wed","Thu","Fri","Sat"];
     let cnt=8;
     
+    // fetch daily weather information
     const fetchData = () => {
         axios
         .get(`https://api.openweathermap.org/data/2.5/forecast/daily?lat=${location.lat}&lon=${location.lon}&cnt=${cnt}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
@@ -28,6 +29,7 @@ function Daily() {
             return (
                 <div className='row' key={index}>
                     <div className='day'>
+                        {/* display day of the week */}
                         {index === 0 ? (
                             "Today" 
                             ) : ( 

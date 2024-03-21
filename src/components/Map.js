@@ -11,6 +11,7 @@ import { LocationContext } from "../context";
 import "../assets/map.css";
 import "leaflet/dist/leaflet.css";
 
+// update the map's location
 function UpdateLocation() {
   const [location, setLocation] = useContext(LocationContext);
   const map = useMap();

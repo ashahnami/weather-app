@@ -20,6 +20,7 @@ function Alert() {
         if (location) fetchData();
     }, [location])
 
+    // determine the temperature severity classification
     const determineTempAlert = (value) => {
         let alertClass = {
             background: "",
@@ -40,6 +41,7 @@ function Alert() {
         return alertClass;
     }
 
+    // determine the humidity severity classification
     const determineHumidityAlert = (value) => {
         let alertClass = {
             background: "",
@@ -55,6 +57,8 @@ function Alert() {
         }
         return alertClass;
     }
+
+    // determine the rainfall severity classification
     const determineRainfallAlert = (value) => {
         let alertClass = {
             background: "",
@@ -74,6 +78,7 @@ function Alert() {
         return alertClass;
     }
 
+    // determine the snowfall severity classification
     const determineSnowfallAlert = (value) => {
         let alertClass = {
             background: "",
@@ -93,6 +98,7 @@ function Alert() {
         return alertClass;
     }
 
+    // determine the wind severity classification
     const determineWindAlert = (value) => {
         let alertClass = {
             background: "",
@@ -115,6 +121,7 @@ function Alert() {
     return (
         <div className='alerts'>
             <div className="title">Alerts</div>
+            {/* displays any alerts there may be, otherwise displays that there are no alerts */}
             {weatherdata ? (
                 <>
                     {determineTempAlert(weatherdata.main.temp) && (

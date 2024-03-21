@@ -9,6 +9,7 @@ function UVIndex() {
   const [UV, setUV] = useState({});
   const [airPollution, setAirPollution] = useState({});
 
+  // classify the UV index value
   const determineClass = (value) => {
     let colorClass = "";
 
@@ -27,6 +28,7 @@ function UVIndex() {
     return { background: colorClass };
   };
 
+  // classify the air pollution value
   const determineAqiClass = (value) => {
     let colorClass = "";
 

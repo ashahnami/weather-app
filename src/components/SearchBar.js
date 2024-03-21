@@ -11,7 +11,6 @@ function SearchBar() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
-  // const { getCode, getName } = require("country-list");
   let navigate = useNavigate();
   let searchRef = useRef();
   const [location, setLocation] = useContext(LocationContext);
@@ -37,6 +36,7 @@ function SearchBar() {
     }
   }
 
+  // clear the searchbar input
   function clearInput() {
     setInput("");
     setResults([]);
@@ -44,14 +44,17 @@ function SearchBar() {
 
   useEffect(() => {
     const handler = (event) => {
+      // if the user clicks outside the searchbar, hide the search results
       if (!searchRef.current.contains(event.target)) {
         setShowResults(false);
       }
     };
 
+    // add a listener for clicking the mouse
     document.addEventListener("mousedown", handler);
 
     return () => {
+      // remove the mouse listener when leaving the page
       document.removeEventListener("mousedown", handler);
     };
   });
@@ -68,6 +71,7 @@ function SearchBar() {
           onFocus={() => setShowResults(true)}
         />
 
+        {/* change icon depending on whether anything has been input */}
         {input.length > 0 ? (
           <ClearIcon onClick={clearInput} className="clear-icon" />
         ) : (
@@ -76,6 +80,7 @@ function SearchBar() {
       </div>
 
       <div className="results">
+        {/* iterate through each of the search results */}
         {showResults
           ? results.map((result, index) => {
               return (
@@ -83,10 +88,6 @@ function SearchBar() {
                   className="result"
                   key={index}
                   onClick={(e) => {
-                    console.log(
-                      countries.getName(result.country, "en", { alias: true })
-                    );
-
                     setShowResults(false);
                     setLocation({
                       place: result.name,

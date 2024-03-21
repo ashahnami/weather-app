@@ -9,6 +9,7 @@ function Hourly() {
   const [location, setLocation] = useContext(LocationContext);
   const [forecast, setForecast] = useState([]);
 
+  // fetch hourly weather data
   const fetchData = () => {
     axios
       .get(`https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
