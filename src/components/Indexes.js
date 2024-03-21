@@ -11,7 +11,7 @@ function UVIndex() {
 
   // classify the UV index value
   const determineClass = (value) => {
-    let colorClass = "";
+    let colorClass = "#fff";
 
     if (value >= 11) {
       colorClass = "#8f3f97";
@@ -30,7 +30,7 @@ function UVIndex() {
 
   // classify the air pollution value
   const determineAqiClass = (value) => {
-    let colorClass = "";
+    let colorClass = "#fff";
 
     if (value >= 301) {
       colorClass = "#7e0023";
@@ -50,19 +50,17 @@ function UVIndex() {
   };
 
   const fetchData = () => {
-    // axios
-    //   .get(`https://api.openweathermap.org/data/3.0/onecall?lat=${location.lat}&lon=${location.lon}&exclude=current,minutely,hourly&appid=${process.env.REACT_APP_API_KEY}`)
-    //   .then(function (response) {
-    //       setUV(response.data.daily[0].uvi);
-    //     })
+    axios
+      .get(`https://api.openweathermap.org/data/3.0/onecall?lat=${location.lat}&lon=${location.lon}&exclude=current,minutely,hourly&appid=${process.env.REACT_APP_API_KEY}`)
+      .then(function (response) {
+          setUV(response.data.daily[0].uvi);
+        })
 
-    // axios
-    //   .get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}`)
-    //   .then(function (response) {
-    //       setAirPollution(response.data.list[0].main.aqi);
-    //     })
-    setUV(3);
-    setAirPollution(2);
+    axios
+      .get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.lat}&lon=${location.lon}&appid=${process.env.REACT_APP_API_KEY}`)
+      .then(function (response) {
+          setAirPollution(response.data.list[0].main.aqi);
+        })
   };
 
   useEffect(() => {
