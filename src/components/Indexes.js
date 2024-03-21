@@ -5,7 +5,7 @@ import { LocationContext } from "../context";
 import "../assets/indexes.css";
 
 function UVIndex() {
-  const [location, setLocation] = useContext(LocationContext);
+  const [location] = useContext(LocationContext);
   const [UV, setUV] = useState({});
   const [airPollution, setAirPollution] = useState({});
 
@@ -80,8 +80,8 @@ function UVIndex() {
       <div className="index">
         <div className="title">Air Pollution</div>
 
-        <div className="class" style={determineAqiClass(UV.uvi)}>
-          {Math.round(UV)}
+        <div className="class" style={determineAqiClass(airPollution.airPollution)}>
+          {Math.round(airPollution)}
         </div>
       </div>
     </div>

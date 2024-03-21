@@ -51,6 +51,13 @@
     font-weight: 600;
 }
 
+@media only screen and (max-width: 720px) {
+    .hourly {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }    
+}
+
 @media only screen and (max-width: 480px) {
     .hourly {
         width: 100vw;
