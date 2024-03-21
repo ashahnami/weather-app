@@ -3,12 +3,14 @@
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    z-index: 100000;
 }
 
 .navbar-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* width: 1260px; */
     align-items: center;
     gap: 15px;
     padding: 5px;
