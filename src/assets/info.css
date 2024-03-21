@@ -30,6 +30,7 @@
     grid-gap: 14px;
     max-width: 1260px;
     width: 100%;
+    min-width: 300px;
 }
 
 .container .box {
