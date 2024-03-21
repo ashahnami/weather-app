@@ -59,9 +59,7 @@ function KeyDetails() {
           <div className="temperature">
             {Math.round(details.main.temp)}°
             
-            <span>
-                ±{((details.main.temp_max - details.main.temp_min) / 2).toFixed(1)}
-            </span>
+
           </div>
 
           {/* Display current feels-like temperature */}
