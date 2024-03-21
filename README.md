@@ -8,7 +8,7 @@
 
 ### Installation
 
-Clone and `cd` into the project directory.
+Clone and `cd` (change directory) into the project directory.
 
 Install the dependencies by running the following command:
 
