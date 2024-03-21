@@ -8,10 +8,10 @@
 .navbar-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     gap: 15px;
     padding: 5px;
-    width: 1200px;
 }
 
 .link {
@@ -23,4 +23,11 @@
 
 .link:hover {
     color: #a8a8a8;
+}
+
+@media only screen and (max-width: 480px) {
+    .navbar-container {
+        display: flex;
+        flex-direction: column;
+    }
 }
