@@ -29,13 +29,16 @@ function Alert() {
 
         if (value >= 40) {
             alertClass.background = "#8b0000";
-            alertClass.text = "Extreme Heat!"
+            alertClass.text = "Extreme Heat! - shelter livestock and keep crops watered"
         } else if (value >= 30) {
             alertClass.background = "#FF0000"
-            alertClass.text = "Very hot!"
+            alertClass.text = "Very hot! - keep livestock and crops hydrated"
         } else if (value >= 23) {
             alertClass.background = "#FFBF00"
-            alertClass.text = "Hot!"
+            alertClass.text = "Hot! - ensure livestock are hydrated"
+        } else if (value <= 1) {
+            alertClass.background = "#8b0000";
+            alertClass.text = "Extreme cold! - shelter livestock and take precautions"
         }
 
         return alertClass;
@@ -50,10 +53,10 @@ function Alert() {
 
         if (value >= 65) {
             alertClass.background = "#8b0000";
-            alertClass.text = "Very humid - lots of moisture in air"
+            alertClass.text = "Very humid - lots of moisture in air - water crops"
         } else if (value >= 55) {
             alertClass.background = "#FA5F55"
-            alertClass.text = "'Sticky' air"
+            alertClass.text = "'Sticky' air - ensure crops are watered"
         }
         return alertClass;
     }
@@ -67,13 +70,13 @@ function Alert() {
 
         if (value >= 50) {
             alertClass.background = "#8b0000";
-            alertClass.text = "Extreme rainfall and potential for flooding"
+            alertClass.text = "Extreme rainfall and potential for flooding!"
         } else if (value >= 10) {
             alertClass.background = "#FF0000"
-            alertClass.text = "Heavy rain"
+            alertClass.text = "Heavy rain - take neccesary precautions"
         } else if (value >= 2.5) {
             alertClass.background = "#FFBF00"
-            alertClass.text = "Moderate rain"
+            alertClass.text = "Moderate rain - soil moisture might be high"
         }
         return alertClass;
     }
@@ -87,13 +90,13 @@ function Alert() {
 
         if (value >= 3) {
             alertClass.background = "#8b0000";
-            alertClass.text = "Extreme snowfall"
+            alertClass.text = "Extreme snowfall! - shelter livestock and crops"
         } else if (value >= 2) {
             alertClass.background = "#FF0000"
-            alertClass.text = "Heavy snowfall"
+            alertClass.text = "Heavy snowfall - soil could become damaged"
         } else if (value >= 1) {
             alertClass.background = "#FFBF00"
-            alertClass.text = "Moderate snowfall"
+            alertClass.text = "Moderate snowfall - take necessary precautions!"
         }
         return alertClass;
     }
@@ -107,13 +110,13 @@ function Alert() {
 
         if (value >= 40) {
             alertClass.background = "#8b0000";
-            alertClass.text = "Extreme Winds "
+            alertClass.text = "Extreme Winds - ensure livestock and crops are safe"
         } else if (value >= 25) {
             alertClass.background = "#FF0000"
-            alertClass.text = "Fast winds"
+            alertClass.text = "Fast winds - crops may become damaged"
         } else if (value >= 20) {
             alertClass.background = "#FFBF00"
-            alertClass.text = "Moderately fast winds"
+            alertClass.text = "Moderately fast winds - take necessary precautions"
         }
         return alertClass;
     }
