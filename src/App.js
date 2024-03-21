@@ -5,7 +5,7 @@ import InfoPage from './pages/InfoPage';
 import { LocationContext } from './context';
 
 function App() {
-  const [location, setLocation] = useState({ place: 'London', lat: '51.5072', lon: '0.1276' });
+  const [location, setLocation] = useState({ place: 'London', country: 'United Kingdom', lat: '51.5072', lon: '0.1276' });
 
   return (
       <LocationContext.Provider value={[location, setLocation]}>
