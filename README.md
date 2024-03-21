@@ -5,6 +5,7 @@
 ### Requirements
 
 - Node.js
+- npm (Included in Node.js installation)
 
 ### Installation
 
