@@ -25,7 +25,7 @@ function UVIndex() {
       colorClass = "#00e400";
     }
 
-    return { background: colorClass };
+    return { backgroundColor: colorClass };
   };
 
   // classify the air pollution value
@@ -46,7 +46,7 @@ function UVIndex() {
       colorClass = "#00e400";
     }
 
-    return { background: colorClass };
+    return { backgroundColor: colorClass };
   };
 
   const fetchData = () => {
@@ -72,7 +72,7 @@ function UVIndex() {
       <div className="index">
         <div className="title">UV Index</div>
 
-        <div className="class" style={determineClass(UV.uvi)}>
+        <div className="class" style={determineClass(UV)}>
           {Math.round(UV)}
         </div>
       </div>
@@ -80,7 +80,7 @@ function UVIndex() {
       <div className="index">
         <div className="title">Air Pollution</div>
 
-        <div className="class" style={determineAqiClass(airPollution.airPollution)}>
+        <div className="class" style={determineAqiClass(airPollution)}>
           {Math.round(airPollution)}
         </div>
       </div>
