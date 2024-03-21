@@ -50,3 +50,16 @@
 .hourly .rainfall .value {
     font-weight: 600;
 }
+
+@media only screen and (max-width: 480px) {
+    .hourly {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .hourly .col {
+        display: flex;
+        flex-direction: row;
+    }
+}

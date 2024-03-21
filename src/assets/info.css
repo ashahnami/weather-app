@@ -83,3 +83,23 @@
     grid-column: 2 / 3;
     grid-row: 4;
 }
+
+@media only screen and (max-width: 480px) {
+    .info {
+        width: 100%;
+        align-items: center;
+        background-color: cyan;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: purple;
+    }
+
+    .container .map {
+        display: none;
+    }
+}
